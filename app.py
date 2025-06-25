@@ -1,11 +1,10 @@
-
 import streamlit as st
-import pickle
+import joblib  # ✅ Use joblib instead of pickle
 import numpy as np
 
 # Load model and vectorizer
-model = pickle.load(open('cyberbullying_model.pkl', 'rb'))
-vectorizer = pickle.load(open('vectorizer.pkl', 'rb'))
+model = joblib.load('cyberbullying_model.pkl')  # ✅ Correct
+vectorizer = joblib.load('vectorizer.pkl')      # ✅ Correct
 
 st.title("Cyberbullying Detection")
 
